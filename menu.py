@@ -621,7 +621,7 @@ while 1:
             We dont have commands for windows operating system we can only give a cmd for you
             """)
             os.system("cmd")
-    elif login=='aws':
+elif login=='aws':
         while True:
             print("\n\n\t\t\t\t\t\t\t||||||||||||||||||||||||")
             print("\t\t\t\t\t\t\t...WELCOME TO MY MENU...")
@@ -707,19 +707,19 @@ while 1:
             elif  ch =='12':
                     pyttsx3.speak("..uploading data in s3 bucket.")
                     x=input("ENTER STATIC DATA NAME :")
-                    x=input("ENTER s3 bucket name NAME :")
+                    y=input("ENTER s3 bucket name NAME :")
                     os.system("aws s3 cp {0} s3://{1}".format(x,y))  
                     pyttsx3.speak(".in s3 bucket image is uploaded successfully..")
             elif  ch =='13':
                     pyttsx3.speak("..WE ARE CREATING CLOUNDFRONT DISTRIBUTION.")
                     x=input("ENTER S3 BUCKETNAME NAME :")
-                    x=input("ENTER STATIC DATA NAME :")
+                    y=input("ENTER STATIC DATA NAME :")
                     os.system("aws cloudfront create-distribution --origin-domain-name {0}.s3.amazonaws.com --default-root-object {1}".format(x,y))  
                     pyttsx3.speak(".we successfully created cloud front distribution..")
             elif  ch =='14':
                     pyttsx3.speak("..WE ARE CREATING snapshot.")
                     x=input("ENTER VOLUME ID :")
-                    os.system("aws ec2 create-snapshot --volume-id {} --description".format(x))
+                    os.system("aws ec2 create-snapshot --volume-id {}".format(x))
             elif  ch =='15':
                     pyttsx3.speak("you choose... to go outside the menu... bye... take care...")
                     break
@@ -727,5 +727,4 @@ while 1:
                     print("YOU ENTERED WRONG CHOICE HERE !! ..PLEASE SELECT CHOICE FROM MENU...! ")
                     pyttsx3.speak("YOU ENTERED WRONG CHOICE HERE !! ..PLEASE SELECT CHOICE FROM MENU...! ")
     else:
-        print("You have selected option which is not available choose from 'local','remote','aws")
-        
+        print("You have selected option which is not available choose from 'local','remote','aws'")
