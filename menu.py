@@ -621,7 +621,7 @@ while 1:
             We dont have commands for windows operating system we can only give a cmd for you
             """)
             os.system("cmd")
-elif login=='aws':
+    elif login=='aws':
         while True:
             print("\n\n\t\t\t\t\t\t\t||||||||||||||||||||||||")
             print("\t\t\t\t\t\t\t...WELCOME TO MY MENU...")
