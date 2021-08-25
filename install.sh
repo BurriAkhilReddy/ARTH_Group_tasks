@@ -7,9 +7,9 @@ else
 	echo "no such user"
 fi
 sudo useradd -s /bin/bash -m "$username"
-if [ `grep $username /etc/sudoers | wc -l` -eq 0 ]
+if [ `grep "$username ALL=(ALL) NOPASSWD: ALL" /etc/sudoers | wc -l` -eq 0 ]
 then
-	sudo echo "$username ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+	echo  username=$username' ;echo "$username ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers' | sudo su
 	sudo passwd $username
 fi
 echo 'test -d ~/.ssh' | sudo su $username
